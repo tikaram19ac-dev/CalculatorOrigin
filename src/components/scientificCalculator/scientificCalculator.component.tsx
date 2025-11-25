@@ -306,44 +306,44 @@ export default function ScientificCalculator() {
   }, [inputDigit, inputDecimal, performOperation, clear, clearEntry]);
 
   const buttonClass =
-    "flex h-12 w-full items-center justify-center rounded-lg border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-sm transition-all duration-200 hover:bg-gray-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700";
+    "flex h-9 w-full items-center justify-center rounded-md border border-gray-300 bg-white text-xs font-medium text-gray-700 shadow-sm transition-all duration-200 hover:bg-gray-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700";
 
   const operationButtonClass =
-    "flex h-12 w-full items-center justify-center rounded-lg border border-blue-300 bg-blue-50 text-sm font-medium text-blue-700 shadow-sm transition-all duration-200 hover:bg-blue-100 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:border-blue-600 dark:bg-blue-900/20 dark:text-blue-300 dark:hover:bg-blue-800/30";
+    "flex h-9 w-full items-center justify-center rounded-md border border-blue-300 bg-blue-50 text-xs font-medium text-blue-700 shadow-sm transition-all duration-200 hover:bg-blue-100 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:border-blue-600 dark:bg-blue-900/20 dark:text-blue-300 dark:hover:bg-blue-800/30";
 
   const scientificButtonClass =
-    "flex h-12 w-full items-center justify-center rounded-lg border border-purple-300 bg-purple-50 text-sm font-medium text-purple-700 shadow-sm transition-all duration-200 hover:bg-purple-100 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:border-purple-600 dark:bg-purple-900/20 dark:text-purple-300 dark:hover:bg-purple-800/30";
+    "flex h-9 w-full items-center justify-center rounded-md border border-purple-300 bg-purple-50 text-xs font-medium text-purple-700 shadow-sm transition-all duration-200 hover:bg-purple-100 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:border-purple-600 dark:bg-purple-900/20 dark:text-purple-300 dark:hover:bg-purple-800/30";
 
   return (
-    <div className="mx-auto max-w-xl rounded-2xl bg-white p-6 shadow-2xl dark:bg-gray-800">
+    <div className="max-w-2lg rounded-xl bg-white p-4 shadow-2xl dark:bg-gray-800">
       {/* Display */}
-      <div className="mb-6 rounded-xl bg-gray-50 p-4 dark:bg-gray-700">
-        <div className="mb-2 flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+      <div className="mb-4 rounded-lg bg-gray-50 p-3 dark:bg-gray-700">
+        <div className="mb-1 flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
           <span>Scientific Calculator</span>
           <div className="flex items-center space-x-2">
             <span className="text-xs">MEM: {state.memory}</span>
             <button
               onClick={toggleAngleMode}
-              className="rounded px-2 py-1 text-xs font-medium transition-colors hover:bg-gray-200 dark:hover:bg-gray-600"
+              className="rounded px-1.5 py-0.5 text-xs font-medium transition-colors hover:bg-gray-200 dark:hover:bg-gray-600"
             >
               {state.angleMode.toUpperCase()}
             </button>
           </div>
         </div>
         <div className="text-right">
-          <div className="text-3xl font-mono font-bold text-gray-900 dark:text-white">
+          <div className="text-2xl font-mono font-bold text-gray-900 dark:text-white">
             {state.display}
           </div>
         </div>
         {state.history.length > 0 && (
-          <div className="mt-2 text-right text-xs text-gray-500 dark:text-gray-400">
+          <div className="mt-1 text-right text-xs text-gray-500 dark:text-gray-400">
             {state.history[state.history.length - 1]}
           </div>
         )}
       </div>
 
       {/* Memory Functions */}
-      <div className="mb-4 grid grid-cols-4 gap-2">
+      <div className="mb-2 grid grid-cols-4 gap-1.5">
         <button onClick={memoryClear} className={buttonClass}>
           MC
         </button>
@@ -359,7 +359,7 @@ export default function ScientificCalculator() {
       </div>
 
       {/* Scientific Functions Row 1 */}
-      <div className="mb-4 grid grid-cols-4 gap-2">
+      <div className="mb-2 grid grid-cols-4 gap-1.5">
         <button
           onClick={() => performScientificFunction("sin")}
           className={scientificButtonClass}
@@ -387,7 +387,7 @@ export default function ScientificCalculator() {
       </div>
 
       {/* Scientific Functions Row 2 */}
-      <div className="mb-4 grid grid-cols-4 gap-2">
+      <div className="mb-2 grid grid-cols-4 gap-1.5">
         <button
           onClick={() => performScientificFunction("ln")}
           className={scientificButtonClass}
@@ -415,7 +415,7 @@ export default function ScientificCalculator() {
       </div>
 
       {/* Scientific Functions Row 3 */}
-      <div className="mb-4 grid grid-cols-4 gap-2">
+      <div className="mb-2 grid grid-cols-4 gap-1.5">
         <button
           onClick={() => performOperation("pow")}
           className={scientificButtonClass}
@@ -447,7 +447,7 @@ export default function ScientificCalculator() {
       </div>
 
       {/* Main Calculator */}
-      <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-4 gap-1.5">
         {/* Row 1 */}
         <button onClick={clear} className={operationButtonClass}>
           C

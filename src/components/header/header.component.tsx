@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-md dark:border-gray-800 dark:bg-gray-900/80">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex max-w-[90vw] items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         {/* Logo/Brand */}
         <Link
           href="/"
@@ -51,7 +51,6 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden items-center space-x-1 md:flex">
-          <ThemeToggle />
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -62,10 +61,11 @@ export default function Header() {
               <span className="absolute bottom-0 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-linear-to-r from-blue-500 to-purple-600 transition-all duration-300 group-hover:w-3/4"></span>
             </Link>
           ))}
+          <ThemeToggle />
         </div>
 
         {/* Desktop Theme Toggle & Mobile Menu Button */}
-        <div className="flex items-center space-x-2">
+        {/* <div className="flex items-center space-x-2">
           <div className="md:hidden">
             <ThemeToggle />
           </div>
@@ -104,7 +104,7 @@ export default function Header() {
               </svg>
             )}
           </button>
-        </div>
+        </div> */}
       </nav>
 
       {/* Mobile Navigation Menu */}
